@@ -1,0 +1,40 @@
+<%- include('templates/header'); -%>
+
+    <div class='container'>
+    <div class='jumbotron'>
+        <h2>SEARCH RESULT</h2>
+        <form action='/results' method='GET'>
+            <input text='type' name='search' placeholder='placeholder'>
+            <button class='btn btn-info'>Search Again</button>
+        </form>
+            </div>
+                <ul>
+                
+                <img src=<%=data.cover.large%> />
+                <div>
+                    
+                    <li>
+                    <%=data.title%>
+                    </li>
+                    
+                    <% data.authors.forEach(function(author){%>
+            	        <li> 
+                            <%=author.name%>
+            	        </li>	
+                    <% }); %>
+                    
+                    <li>
+                    <%=data.publish_date%>
+                    </li>
+                    
+                    <% data.publishers.forEach(function(publisher){%>
+            	        <li> 
+                            <%=publisher.name%>
+            	        </li>	
+                    <% }); %>
+                    
+                </div>
+            
+            </ul>
+    </div>
+<%- include('templates/footer'); -%>
